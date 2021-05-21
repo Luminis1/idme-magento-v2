@@ -1,0 +1,41 @@
+<!-- ko if: (getEnabled()) -->
+<div class="discount idme-connect" id="idmeVerify">
+    <h2></h2>
+    <!-- ko if: (idmeVerify().verified) -->
+    <div id='verified-affiliation' class="affiliation">
+        <!-- ko text: $t('You have verified yourself as') --> <!-- /ko -->
+        <strong><span id="verification-name" data-bind="text:idmeVerify().verifiedGroup"></span></strong>
+    </div>
+    <!-- /ko -->
+    <!-- ko ifnot: (idmeVerify().verified) -->
+    <div class="idme-buttons" data-bind="foreach:idmeVerify().policies">
+        <div class="idme-button">
+            <a href="#" class="login-trigger" title="" name=""
+               data-bind="attr:{name: handle, title:name}">
+                <img src="" height="34" alt="" data-bind="attr:{src: img_url, alt: name},click: $parent.getPopup"/>
+            </a>
+        </div>
+    </div>
+    <!-- /ko -->
+    <div class="idme-about">
+        <div class="container">
+            <img alt="ID.me" src="https://s3.amazonaws.com/idme/assets/lock.png"
+                 width="8">
+            <!-- ko text:$t('Verification by ID.me') --> <!-- /ko -->
+            <a href="#" class="idme-modal-trigger" data-bind="click: getModal">
+                <!-- ko text:$t('What is ID.me?') --> <!-- /ko -->
+            </a>
+            <!-- ko if: (idmeVerify().verified) -->
+            | <a href=""
+                 data-bind="attr:{title:$t('Remove your verified affiliation')}, click: removeVerification">
+            <!-- ko text: $t('Remove') --> <!-- /ko -->
+        </a><!-- /ko -->
+        </div>
+    </div>
+    <div id="idme-modal" style="display: none;"></div>
+    <div id="idme-modal-content" style="display: none;">
+        <h3 data-bind="text: $t('What is ID.me?')"></h3>
+        <div class="content" data-bind="text:$t(idmeVerify().aboutText)"></div>
+    </div>
+</div>
+<!-- /ko -->

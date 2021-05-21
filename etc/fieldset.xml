@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:DataObject/etc/fieldset.xsd">
+    <scope id="global">
+        <fieldset id="sales_convert_quote">
+            <field name="idme_uuid">
+                <aspect name="to_order"/>
+            </field>
+            <field name="idme_group">
+                <aspect name="to_order"/>
+            </field>
+            <field name="idme_subgroups">
+                <aspect name="to_order"/>
+            </field>
+        </fieldset>
+    </scope>
+</config>

@@ -1,0 +1,20 @@
+<?php /** @var \IDme\GroupVerification\Block\Cart\Buttons $block */ ?>
+<?php if ($block->isOperational()) : ?>
+    <div id="idmeVerify" data-role="idme-verify" data-bind="scope: 'idme-verify'">
+        <!-- ko template: getTemplate() --><!-- /ko -->
+
+
+    </div>
+
+    <script type="text/x-magento-init">
+    {
+        "[data-role=idme-verify]": {
+            "Magento_Ui/js/core/app": <?php
+        echo $block->getJsLayout(); ?>
+        }
+    }
+
+
+    </script>
+<?php endif; ?>
+
