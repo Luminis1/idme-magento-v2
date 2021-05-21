@@ -10,7 +10,7 @@
     "magento/module-ui":  "^100.0||^101.0"
   },
   "type": "magento2-module",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "time": "2018-09-24",
   "license": "MIT",
   "autoload": {
